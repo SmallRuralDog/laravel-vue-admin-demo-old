@@ -32,7 +32,7 @@ return [
     ],
     'bootstrap' => app_path('Admin/bootstrap.php'),
     'route' => [
-        'prefix' => env('ADMIN_ROUTE_PREFIX', 'admin'),
+        'prefix' => env('ADMIN_ROUTE_PREFIX', ''),
         'api_prefix' => env('ADMIN_ROUTE_PREFIX', 'admin-api'),
         'namespace' => 'App\\Admin\\Controllers',
         'middleware' => ['web', 'admin'],
