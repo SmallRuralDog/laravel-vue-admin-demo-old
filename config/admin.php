@@ -97,7 +97,7 @@ return [
         'role_menu_table' => 'admin_role_menu',
     ],
     'operation_log' => [
-        'enable' => false,
+        'enable' => true,
         /*
          * Only logging allowed methods in the list
          */
