@@ -26,12 +26,14 @@ class DtkSuperCategoryController extends AdminController implements AdminResourc
     {
         $grid = new Grid(new DtkSuperCategory());
 
+        $grid->defaultSort("cid","asc");
+
         $grid->quickSearch("cname");
 
-        $grid->column('cid', '一级分类ID')->width(150)->sortable();
+        $grid->column('cid', '一级分类ID')->width(150);
         $grid->column('cname', '一级分类名称')->width(150);
         $grid->column('cpic', '一级分类图标')->component(Image::make()->preview()->size(30, 30))->width(150)->help("图片展现模式，点击可预览大图");
-        $grid->column('subcid', '二级分类Id')->width(150)->sortable();
+        $grid->column('subcid', '二级分类Id')->width(150);
         $grid->column('subcname', '二级分类名称')->width(150);
         $grid->column('scpic', '二级分类图标')->component(Avatar::make())->width(150);
 
