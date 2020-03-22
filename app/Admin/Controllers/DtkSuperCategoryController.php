@@ -26,6 +26,8 @@ class DtkSuperCategoryController extends AdminController implements AdminResourc
     {
         $grid = new Grid(new DtkSuperCategory());
 
+        $grid->quickSearch("cname");
+
         $grid->column('cid', '一级分类ID')->width(150)->sortable();
         $grid->column('cname', '一级分类名称')->width(150);
         $grid->column('cpic', '一级分类图标')->component(Image::make()->preview()->size(30,30))->width(150)->help("图片展现模式，点击可预览大图");
@@ -34,7 +36,8 @@ class DtkSuperCategoryController extends AdminController implements AdminResourc
         $grid->column('scpic', '二级分类图标')->component(Avatar::make())->width(150);
 
         $grid->toolbars(function (Grid\Toolbars $toolbars) {
-            $toolbars->addLeft(Grid\Tools\ToolButton::make("同步分类（自定义Toolbar）")->handler('request')->uri(route('DtkSuperCategoryCollect')));
+            $toolbars->addRight(Grid\Tools\ToolButton::make("同步分类（自定义Toolbar）")->type("text")->handler('request')->uri(route('DtkSuperCategoryCollect')));
+            $toolbars->addRight(Grid\Tools\ToolButton::make("本演示源代码")->type("text")->handler('link')->uri('https://github.com/SmallRuralDog/laravel-vue-admin-demo/blob/master/app/Admin/Controllers/DtkSuperCategoryController.php'));
         });
 
         return $grid;
