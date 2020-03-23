@@ -295,6 +295,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -375,7 +376,7 @@ __webpack_require__.r(__webpack_exports__);
           sku_list: item.value_map.map(function (valueItem) {
             return {
               id: valueItem.attr_value.id,
-              attr_id: valueItem.attr_id,
+              goods_attr_id: valueItem.attr_id,
               name: valueItem.attr_value.name,
               alias: "",
               image: valueItem.image
@@ -461,7 +462,7 @@ __webpack_require__.r(__webpack_exports__);
           _this5.addNewGoodsAttrName = "";
           _this5.attrs.goodsAttrs = res.data;
 
-          _this5.$Message.success("添加成功");
+          _this5.$message.success("添加成功");
         }
       });
     },
@@ -481,7 +482,7 @@ __webpack_require__.r(__webpack_exports__);
           selfGoodsAttrs[index].values = res.data;
           _this6.GoodsAttrs = selfGoodsAttrs;
 
-          _this6.$Message.success("添加成功");
+          _this6.$message.success("添加成功");
         }
       });
     }
@@ -1874,7 +1875,7 @@ var render = function() {
                           attrs: {
                             slot: "reference",
                             plain: "",
-                            type: "primary"
+                            type: "success"
                           },
                           slot: "reference"
                         },

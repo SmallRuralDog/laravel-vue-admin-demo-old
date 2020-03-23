@@ -177,7 +177,7 @@
                         </el-input>
                         <el-button
                             plain
-                            type="primary"
+                            type="success"
                             slot="reference"
                             class="ml-10"
                             >创建新规格</el-button
@@ -197,8 +197,10 @@
         </div>
     </div>
 </template>
+
 <script>
 import GoodsSkuList from "./GoodsSkuList";
+
 export default {
     components: {
         GoodsSkuList
@@ -354,7 +356,7 @@ export default {
                     if (res.code == 200) {
                         this.addNewGoodsAttrName = "";
                         this.attrs.goodsAttrs = res.data;
-                        this.$Message.success("添加成功");
+                        this.$message.success("添加成功");
                     }
                 });
         },
@@ -373,7 +375,7 @@ export default {
                         );
                         selfGoodsAttrs[index].values = res.data;
                         this.GoodsAttrs = selfGoodsAttrs;
-                        this.$Message.success("添加成功");
+                        this.$message.success("添加成功");
                     }
                 });
         }
