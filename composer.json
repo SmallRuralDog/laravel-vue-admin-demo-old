@@ -15,7 +15,8 @@
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "predis/predis": "^1.1",
-        "smallruraldog/laravel-vue-admin": "^0.1.3"
+        "smallruraldog/laravel-vue-admin": "^0.1.3",
+        "smallruraldog/laravel-vue-admin-demo-extend": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
@@ -61,5 +62,11 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ]
-    }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "app/Admin/Extends/LaravelVueAdminDemoExtend"
+        }
+    ]
 }

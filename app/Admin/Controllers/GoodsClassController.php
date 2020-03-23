@@ -1,0 +1,50 @@
+<?php
+
+
+namespace App\Admin\Controllers;
+
+
+use App\Models\GoodsClass;
+use SmallRuralDog\Admin\Components\Checkbox;
+use SmallRuralDog\Admin\Components\Image;
+use SmallRuralDog\Admin\Components\InputNumber;
+use SmallRuralDog\Admin\Components\Select;
+use SmallRuralDog\Admin\Components\SelectOption;
+use SmallRuralDog\Admin\Components\Upload;
+use SmallRuralDog\Admin\Controllers\AdminController;
+use SmallRuralDog\Admin\Controllers\AdminResource;
+use SmallRuralDog\Admin\Form;
+use SmallRuralDog\Admin\Grid;
+
+class GoodsClassController extends AdminController implements AdminResource
+{
+
+    public function grid()
+    {
+        $grid = new Grid(new GoodsClass());
+        $grid->model()->where('parent_id', 0);
+        $grid->tree();
+        $grid->column('icon')->component(Image::make()->size(20, 20));
+        $grid->column('name');
+
+        return $grid;
+    }
+
+    public function form($isEdit = false)
+    {
+        $form = new Form(new GoodsClass());
+
+        $form->item('parent_id', '上级菜单')->component(Select::make(0)->options(function () {
+            return GoodsClass::query()->where('parent_id', 0)->orderBy('order')->get()->map(function ($item) {
+                return SelectOption::make($item->id, $item->name);
+            })->prepend(SelectOption::make(0, '顶级菜单'));
+        }));
+        $form->item('name', '名称')->required();
+        $form->item('goods_class_key', '唯一标识')->required();
+        $form->item('icon', '图标')->required()->component(Upload::make()->width(80)->height(80));
+        $form->item('order', '排序')->required()->component(InputNumber::make(1));
+        $form->item('status', '状态')->required()->component(Checkbox::make(1, "启用"));
+
+        return $form;
+    }
+}

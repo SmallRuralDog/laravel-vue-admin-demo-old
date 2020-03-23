@@ -1,0 +1,30 @@
+{
+    "name": "smallruraldog/laravel-vue-admin-demo-extend",
+    "description": "A Laravel Vue Admin Extend",
+    "keywords": [
+        "laravel",
+        "vue",
+        "admin"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Smallruraldog\\LaravelVueAdminDemoExtend\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Smallruraldog\\LaravelVueAdminDemoExtend\\ExtendServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

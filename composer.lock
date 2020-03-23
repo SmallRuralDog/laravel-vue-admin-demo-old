@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "396a1f327bcc7b600ce3cfea5486cf5f",
+    "content-hash": "a1c03163ad620b6c64c1913ab9ee7434",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2216,6 +2216,40 @@
                 "vue"
             ],
             "time": "2020-03-23T02:04:26+00:00"
+        },
+        {
+            "name": "smallruraldog/laravel-vue-admin-demo-extend",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "app/Admin/Extends/LaravelVueAdminDemoExtend",
+                "reference": "60fb4b9ccbb9ec08b1f19650e4c3e55ce97b4f28"
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Smallruraldog\\LaravelVueAdminDemoExtend\\ExtendServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Smallruraldog\\LaravelVueAdminDemoExtend\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Vue Admin Extend",
+            "keywords": [
+                "admin",
+                "laravel",
+                "vue"
+            ]
         },
         {
             "name": "swiftmailer/swiftmailer",

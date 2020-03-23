@@ -12,5 +12,15 @@ Route::group([
 
 
     $router->resource('DtkSuperCategory', 'DtkSuperCategoryController');
-    $router->get('DtkSuperCategoryCollect','DtkSuperCategoryController@collect')->name('DtkSuperCategoryCollect');
+    $router->get('DtkSuperCategoryCollect', 'DtkSuperCategoryController@collect')->name('DtkSuperCategoryCollect');
+
+    //产品演示
+    $router->resource('supplier', 'SuppliersController');
+    $router->resource('brand', 'BrandController');
+    $router->resource('goods/class', 'GoodsClassController');
+    $router->resource('goods/list', 'GoodsController');
+    //产品操作
+    $router->post("goods/addGoodsAttr", "GoodsController@addGoodsAttr")->name("addGoodsAttr");
+    $router->post("goods/addGoodsAttrValue", "GoodsController@addGoodsAttrValue")->name("addGoodsAttrValue");
+
 });
