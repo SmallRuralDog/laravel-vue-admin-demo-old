@@ -28,6 +28,9 @@ class BrandController extends AdminController implements AdminResource
         $grid->column("source", "产地国家")->width(100)->align("center");
         $grid->column("source_icon", "索引")->component(Image::make()->size(30, 30))->width(50)->align("center");
 
+        $grid->toolbars(function (Grid\Toolbars $toolbars){
+            $toolbars->addRight(Grid\Tools\ToolButton::make("查看源代码")->handler("link")->uri("https://github.com/SmallRuralDog/laravel-vue-admin-demo/blob/master/app/Admin/Controllers/BrandController.php"));
+        });
 
         return $grid;
     }

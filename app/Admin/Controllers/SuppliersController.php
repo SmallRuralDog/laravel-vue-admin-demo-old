@@ -32,6 +32,8 @@ class SuppliersController extends AdminController implements AdminResource
 
         $grid->toolbars(function (Grid\Toolbars $toolbars) {
             $toolbars->createButton()->content("添加品牌");
+            $toolbars->addRight(Grid\Tools\ToolButton::make("查看源代码")->handler("link")->uri("https://github.com/SmallRuralDog/laravel-vue-admin-demo/blob/master/app/Admin/Controllers/SuppliersController.php"));
+
         });
 
 

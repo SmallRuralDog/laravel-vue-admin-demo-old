@@ -28,6 +28,10 @@ class GoodsClassController extends AdminController implements AdminResource
         $grid->column('icon')->component(Image::make()->size(20, 20));
         $grid->column('name');
 
+        $grid->toolbars(function (Grid\Toolbars $toolbars){
+            $toolbars->addLeft(Grid\Tools\ToolButton::make("查看源代码")->handler("link")->uri("https://github.com/SmallRuralDog/laravel-vue-admin-demo/blob/master/app/Admin/Controllers/GoodsClassController.php"));
+        });
+
         return $grid;
     }
 
