@@ -11,10 +11,8 @@ use App\Models\GoodsAttrMap;
 use App\Models\GoodsAttrValue;
 use App\Models\GoodsAttrValueMap;
 use App\Models\GoodsClass;
-use App\Models\GoodsSkuStock;
 use Illuminate\Http\Request;
 use SmallRuralDog\Admin\Components\Cascader;
-use SmallRuralDog\Admin\Components\ColorPicker;
 use SmallRuralDog\Admin\Components\CSwitch;
 use SmallRuralDog\Admin\Components\DatePicker;
 use SmallRuralDog\Admin\Components\DateTimePicker;
@@ -23,13 +21,9 @@ use SmallRuralDog\Admin\Components\Image;
 use SmallRuralDog\Admin\Components\Input;
 use SmallRuralDog\Admin\Components\Radio;
 use SmallRuralDog\Admin\Components\RadioGroup;
-use SmallRuralDog\Admin\Components\Rate;
 use SmallRuralDog\Admin\Components\Select;
 use SmallRuralDog\Admin\Components\SelectOption;
-use SmallRuralDog\Admin\Components\Slider;
 use SmallRuralDog\Admin\Components\Tag;
-use SmallRuralDog\Admin\Components\TimePicker;
-use SmallRuralDog\Admin\Components\Transfer;
 use SmallRuralDog\Admin\Components\Upload;
 use SmallRuralDog\Admin\Components\WangEditor;
 use SmallRuralDog\Admin\Controllers\AdminController;
@@ -57,8 +51,24 @@ class GoodsController extends AdminController implements AdminResource
             return $value == 1 ? "上架" : "下架";
         })->component(Tag::make()->type(["上架" => "success", "下架" => "danger"]));
 
+        $grid->column('created_at', '发布时间');
+
 
         $grid->actions(function (Grid\Actions $actions) {
+        });
+
+        $grid->filter(function (Grid\Filter $filter) {
+            $filter->equal('brand_id', '所属品牌')->component(Select::make()->options(function () {
+                return Brand::query()->get()->map(function ($item) {
+                    return SelectOption::make($item->id, $item->name);
+                })->all();
+            }));
+            $filter->date('created_at', '发布日期')->component(DatePicker::make());
+            //$filter->between('created_at', '日期范围')->component(DatePicker::make()->type("daterange"));
+            $filter->equal('putaway', '上下架')->component(RadioGroup::make(null, [
+                Radio::make(1, '上架'),
+                Radio::make(0, '下架'),
+            ]));
         });
 
         $grid->toolbars(function (Grid\Toolbars $toolbars) {

@@ -14,6 +14,7 @@ class Goods extends Model
 
     protected $casts = [
         "goods_class_path" => "json",
+        'created_at' => 'datetime:Y-m-d H:i:s',
     ];
 
     protected $with = ['images'];
