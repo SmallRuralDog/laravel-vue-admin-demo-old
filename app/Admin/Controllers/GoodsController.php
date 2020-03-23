@@ -102,16 +102,16 @@ class GoodsController extends AdminController implements AdminResource
             ->help("尺寸750x750像素以上，大小2M以下,最多10张图片，第一张为产品主图");
         $form->item('description', "商品卖点")->help("选填，商品卖点简述，例如：此款商品美观大方 性价比较高 不容错过");
 
-        $form->item('one_attr', "规格类型")->component(RadioGroup::make(1)->options([
+        $form->item('one_attr', "规格类型")->component(RadioGroup::make(0)->options([
             Radio::make(1, "单规格"),
             Radio::make(0, "多规格"),
         ])->disabled($isEdit))->topComponent(Divider::make("规格/库存"))->help("保存后无法修改");
 
-        $form->item("price", "价格")->vif("one_attr", 1)->component(Input::make()->append("元"))->inputWidth(5);
-        $form->item("cost_price", "进货价")->vif("one_attr", 1)->component(Input::make()->append("元"))->inputWidth(5);
-        $form->item("line_price", "划线价")->vif("one_attr", 1)->component(Input::make()->append("元"))->inputWidth(5);
-        $form->item("stock_num", "库存")->vif("one_attr", 1)->component(Input::make()->append("元"))->inputWidth(5);
-        $form->item("goods_sku", "产品规格")->vif("one_attr", 0)->component(GoodsSku::make());
+        $form->item("price", "价格")->vif("one_attr", 1)->component(Input::make(0)->append("元"))->inputWidth(5);
+        $form->item("cost_price", "进货价")->vif("one_attr", 1)->component(Input::make(0)->append("元"))->inputWidth(5);
+        $form->item("line_price", "划线价")->vif("one_attr", 1)->component(Input::make(0)->append("元"))->inputWidth(5);
+        $form->item("stock_num", "库存")->vif("one_attr", 1)->component(Input::make(0)->append("元"))->inputWidth(5);
+        $form->item("goods_sku", "产品规格")->vif("one_attr", 0)->component(GoodsSku::make())->help("这是自定义组件，<a target='_blank' href='https://github.com/SmallRuralDog/laravel-vue-admin-demo/blob/master/app/Admin/Extends/LaravelVueAdminDemoExtend/resources/js/components/GoodsSku.vue'>查看源代码</a>");
 
 
         $form->item("putaway", "上架")->component(CSwitch::make());
