@@ -275,7 +275,7 @@ export default {
                     sku_list: item.value_map.map(valueItem => {
                         return {
                             id: valueItem.attr_value.id,
-                            attr_id: valueItem.attr_id,
+                            goods_attr_id: valueItem.attr_id,
                             name: valueItem.attr_value.name,
                             alias: "",
                             image: valueItem.image

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+
 use Illuminate\Database\Eloquent\Model;
 
 class GoodsSku extends Model
@@ -86,7 +87,7 @@ class GoodsSku extends Model
                 'goods_id' => $goods->id,
                 'goods_sku_id' => $goods_sku->id,
                 'attr_value_id' => $item['id'],
-                'attr_id' => $item['attr_id'],
+                'attr_id' => $item['goods_attr_id'] ?? $item['_attr_id'] ?? 0,
             ]);
         });
         $sku_name = collect($attrs)->sortBy("id")->pluck("name")->join(" ");
