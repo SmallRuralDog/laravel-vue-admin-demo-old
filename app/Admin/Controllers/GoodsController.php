@@ -61,6 +61,12 @@ class GoodsController extends AdminController implements AdminResource
         $grid->actions(function (Grid\Actions $actions) {
         });
 
+        $grid->toolbars(function (Grid\Toolbars $toolbars) {
+            $toolbars->createButton()->content("添加产品");
+            $toolbars->addRight(Grid\Tools\ToolButton::make("页面源代码")->handler("link")->uri("https://github.com/SmallRuralDog/laravel-vue-admin-demo/blob/master/app/Admin/Controllers/GoodsController.php"));
+            $toolbars->addRight(Grid\Tools\ToolButton::make("SKU字段扩展源代码")->handler("link")->uri("https://github.com/SmallRuralDog/laravel-vue-admin-demo/tree/master/app/Admin/Extends/LaravelVueAdminDemoExtend"));
+        });
+
         return $grid;
     }
 
@@ -91,10 +97,10 @@ class GoodsController extends AdminController implements AdminResource
             Radio::make(0, "多规格"),
         ])->disabled($isEdit))->topComponent(Divider::make("规格/库存"))->help("保存后无法修改");
 
-        $form->item("price", "价格")->vif("one_attr", 1)->required()->component(Input::make()->append("元"))->inputWidth(5);
-        $form->item("cost_price", "进货价")->vif("one_attr", 1)->required()->component(Input::make()->append("元"))->inputWidth(5);
-        $form->item("line_price", "划线价")->vif("one_attr", 1)->required()->component(Input::make()->append("元"))->inputWidth(5);
-        $form->item("stock_num", "库存")->vif("one_attr", 1)->required()->component(Input::make()->append("元"))->inputWidth(5);
+        $form->item("price", "价格")->vif("one_attr", 1)->component(Input::make()->append("元"))->inputWidth(5);
+        $form->item("cost_price", "进货价")->vif("one_attr", 1)->component(Input::make()->append("元"))->inputWidth(5);
+        $form->item("line_price", "划线价")->vif("one_attr", 1)->component(Input::make()->append("元"))->inputWidth(5);
+        $form->item("stock_num", "库存")->vif("one_attr", 1)->component(Input::make()->append("元"))->inputWidth(5);
         $form->item("goods_sku", "产品规格")->vif("one_attr", 0)->component(GoodsSku::make());
 
 
