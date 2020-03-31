@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b99324c61e4231b6d8f3b9f905f4223a",
+    "content-hash": "e08ea0b1d57624110230b38fe1edad04",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2214,16 +2214,16 @@
         },
         {
             "name": "smallruraldog/laravel-vue-admin",
-            "version": "v0.1.8",
+            "version": "v0.1.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SmallRuralDog/laravel-vue-admin.git",
-                "reference": "f0c17612754cab4f57aaf44c5047bf41f588c64d"
+                "reference": "289877467d0a78b4c387d045e6780dbfac348225"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SmallRuralDog/laravel-vue-admin/zipball/f0c17612754cab4f57aaf44c5047bf41f588c64d",
-                "reference": "f0c17612754cab4f57aaf44c5047bf41f588c64d",
+                "url": "https://api.github.com/repos/SmallRuralDog/laravel-vue-admin/zipball/289877467d0a78b4c387d045e6780dbfac348225",
+                "reference": "289877467d0a78b4c387d045e6780dbfac348225",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2277,7 +2277,7 @@
                 "laravel",
                 "vue"
             ],
-            "time": "2020-03-30T08:44:42+00:00"
+            "time": "2020-03-30T10:35:44+00:00"
         },
         {
             "name": "smallruraldog/laravel-vue-admin-demo-extend",
