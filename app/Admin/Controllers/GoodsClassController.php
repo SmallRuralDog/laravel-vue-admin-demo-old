@@ -25,6 +25,7 @@ class GoodsClassController extends AdminController implements AdminResource
         $grid->model()->with(['children']);
         $grid->model()->where('parent_id', 0);
         $grid->tree();
+        $grid->column('id')->width(50);
         $grid->column('icon')->component(Image::make()->size(20, 20));
         $grid->column('name');
 
