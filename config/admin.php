@@ -14,7 +14,7 @@ return [
     'logo_light' => null,
     'logo_mini_light' => null,
     //版权
-    'copyright' => 'Copyright © 2020 SmallRuralDog',
+    'copyright' => 'Copyright © 2020 SmallRuralDog V0.1.15',
     //默认头像
     'default_avatar' => 'https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png',
     //登录页面背景
