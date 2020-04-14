@@ -2113,16 +2113,16 @@
         },
         {
             "name": "smallruraldog/laravel-vue-admin",
-            "version": "v0.1.14",
+            "version": "v0.1.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SmallRuralDog/laravel-vue-admin.git",
-                "reference": "62483c260ea876b655375791cd66f222e6f99dcd"
+                "reference": "791c60d2fbc682115477b473c7e3ce0e4fe3d084"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SmallRuralDog/laravel-vue-admin/zipball/62483c260ea876b655375791cd66f222e6f99dcd",
-                "reference": "62483c260ea876b655375791cd66f222e6f99dcd",
+                "url": "https://api.github.com/repos/SmallRuralDog/laravel-vue-admin/zipball/791c60d2fbc682115477b473c7e3ce0e4fe3d084",
+                "reference": "791c60d2fbc682115477b473c7e3ce0e4fe3d084",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2176,7 +2176,7 @@
                 "laravel",
                 "vue"
             ],
-            "time": "2020-04-14T10:35:40+00:00"
+            "time": "2020-04-14T13:21:01+00:00"
         },
         {
             "name": "smallruraldog/laravel-vue-admin-demo-extend",
