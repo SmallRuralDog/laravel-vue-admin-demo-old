@@ -45,14 +45,16 @@ class SuppliersController extends AdminController
     {
         $form = new Form(new Supplier());
 
+        $form->labelPosition("top");
 
-        $form->item('name', '供货商名称')->required()->inputWidth(8);
-        $form->item('phone')->required()->inputWidth(4);
-        $form->item('qq')->inputWidth(4);
-        $form->item('email')->inputWidth(4);
-        $form->item('principal', "负责人")->inputWidth(4);
+
+        $form->item('name', '供货商名称')->required();
+        $form->item('phone')->required();
+        $form->item('qq');
+        $form->item('email');
+        $form->item('principal', "负责人");
         $form->item('address', "地址")->required();
-        $form->item('remark', "备注")->inputWidth(8)->component(Input::make()->textarea());
+        $form->item('remark', "备注")->component(Input::make()->textarea());
 
 
         return $form;
