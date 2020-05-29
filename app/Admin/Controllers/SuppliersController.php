@@ -5,13 +5,12 @@ namespace App\Admin\Controllers;
 
 
 use App\Models\Supplier;
-use SmallRuralDog\Admin\Components\Input;
+use SmallRuralDog\Admin\Components\Form\Input;
 use SmallRuralDog\Admin\Controllers\AdminController;
-use SmallRuralDog\Admin\Controllers\AdminResource;
 use SmallRuralDog\Admin\Form;
 use SmallRuralDog\Admin\Grid;
 
-class SuppliersController extends AdminController implements AdminResource
+class SuppliersController extends AdminController
 {
 
     public function grid()
@@ -35,6 +34,8 @@ class SuppliersController extends AdminController implements AdminResource
             $toolbars->addRight(Grid\Tools\ToolButton::make("查看源代码")->handler("link")->uri("https://github.com/SmallRuralDog/laravel-vue-admin-demo/blob/master/app/Admin/Controllers/SuppliersController.php"));
 
         });
+
+        $grid->dialogForm($this->form()->isDialog(), 500);
 
 
         return $grid;

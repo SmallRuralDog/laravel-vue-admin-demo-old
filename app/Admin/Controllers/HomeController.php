@@ -2,12 +2,14 @@
 
 namespace App\Admin\Controllers;
 
-use SmallRuralDog\Admin\Components\Alert;
+
 use SmallRuralDog\Admin\Components\Antv\Area;
 use SmallRuralDog\Admin\Components\Antv\Column;
 use SmallRuralDog\Admin\Components\Antv\Line;
 use SmallRuralDog\Admin\Components\Antv\StepLine;
-use SmallRuralDog\Admin\Components\Card;
+
+use SmallRuralDog\Admin\Components\Widgets\Alert;
+use SmallRuralDog\Admin\Components\Widgets\Card;
 use SmallRuralDog\Admin\Controllers\AdminController;
 use SmallRuralDog\Admin\Layout\Content;
 use SmallRuralDog\Admin\Layout\Row;

@@ -12,27 +12,23 @@ use App\Models\GoodsAttrValue;
 use App\Models\GoodsAttrValueMap;
 use App\Models\GoodsClass;
 use Illuminate\Http\Request;
-use SmallRuralDog\Admin\Components\Cascader;
-use SmallRuralDog\Admin\Components\CSwitch;
-use SmallRuralDog\Admin\Components\DatePicker;
-use SmallRuralDog\Admin\Components\DateTimePicker;
-use SmallRuralDog\Admin\Components\Divider;
-use SmallRuralDog\Admin\Components\Image;
-use SmallRuralDog\Admin\Components\Input;
-use SmallRuralDog\Admin\Components\Radio;
-use SmallRuralDog\Admin\Components\RadioGroup;
-use SmallRuralDog\Admin\Components\Select;
-use SmallRuralDog\Admin\Components\SelectOption;
-use SmallRuralDog\Admin\Components\Tag;
-use SmallRuralDog\Admin\Components\Upload;
-use SmallRuralDog\Admin\Components\WangEditor;
+use SmallRuralDog\Admin\Components\Attrs\SelectOption;
+use SmallRuralDog\Admin\Components\Form\Cascader;
+use SmallRuralDog\Admin\Components\Form\CSwitch;
+use SmallRuralDog\Admin\Components\Form\DatePicker;
+use SmallRuralDog\Admin\Components\Form\Input;
+use SmallRuralDog\Admin\Components\Form\Radio;
+use SmallRuralDog\Admin\Components\Form\RadioGroup;
+use SmallRuralDog\Admin\Components\Form\Select;
+use SmallRuralDog\Admin\Components\Form\WangEditor;
+use SmallRuralDog\Admin\Components\Grid\Image;
+use SmallRuralDog\Admin\Components\Widgets\Divider;
 use SmallRuralDog\Admin\Controllers\AdminController;
-use SmallRuralDog\Admin\Controllers\AdminResource;
 use SmallRuralDog\Admin\Form;
 use SmallRuralDog\Admin\Grid;
 use Smallruraldog\LaravelVueAdminDemoExtend\Components\GoodsSku;
 
-class GoodsController extends AdminController implements AdminResource
+class GoodsController extends AdminController
 {
 
     public function grid()

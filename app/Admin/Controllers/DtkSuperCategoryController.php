@@ -6,15 +6,14 @@ namespace App\Admin\Controllers;
 
 use App\Models\DtkSuperCategory;
 use Illuminate\Support\Facades\Http;
-use SmallRuralDog\Admin\Components\Avatar;
-use SmallRuralDog\Admin\Components\Image;
-use SmallRuralDog\Admin\Components\InputNumber;
-use SmallRuralDog\Admin\Components\Select;
-use SmallRuralDog\Admin\Components\SelectOption;
-use SmallRuralDog\Admin\Components\Upload;
+use SmallRuralDog\Admin\Components\Attrs\SelectOption;
+use SmallRuralDog\Admin\Components\Form\InputNumber;
+use SmallRuralDog\Admin\Components\Form\Select;
+use SmallRuralDog\Admin\Components\Form\Upload;
+use SmallRuralDog\Admin\Components\Grid\Avatar;
+use SmallRuralDog\Admin\Components\Grid\Image;
 use SmallRuralDog\Admin\Controllers\AdminController;
 use SmallRuralDog\Admin\Controllers\AdminResource;
-use SmallRuralDog\Admin\Facades\Admin;
 use SmallRuralDog\Admin\Form;
 use SmallRuralDog\Admin\Grid;
 

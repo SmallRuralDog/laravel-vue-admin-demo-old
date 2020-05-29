@@ -5,18 +5,17 @@ namespace App\Admin\Controllers;
 
 
 use App\Models\GoodsClass;
-use SmallRuralDog\Admin\Components\Checkbox;
-use SmallRuralDog\Admin\Components\Image;
-use SmallRuralDog\Admin\Components\InputNumber;
-use SmallRuralDog\Admin\Components\Select;
-use SmallRuralDog\Admin\Components\SelectOption;
-use SmallRuralDog\Admin\Components\Upload;
+use SmallRuralDog\Admin\Components\Attrs\SelectOption;
+use SmallRuralDog\Admin\Components\Form\Checkbox;
+use SmallRuralDog\Admin\Components\Form\InputNumber;
+use SmallRuralDog\Admin\Components\Form\Select;
+use SmallRuralDog\Admin\Components\Form\Upload;
+use SmallRuralDog\Admin\Components\Grid\Image;
 use SmallRuralDog\Admin\Controllers\AdminController;
-use SmallRuralDog\Admin\Controllers\AdminResource;
 use SmallRuralDog\Admin\Form;
 use SmallRuralDog\Admin\Grid;
 
-class GoodsClassController extends AdminController implements AdminResource
+class GoodsClassController extends AdminController
 {
 
     public function grid()
@@ -29,7 +28,7 @@ class GoodsClassController extends AdminController implements AdminResource
         $grid->column('icon')->component(Image::make()->size(20, 20));
         $grid->column('name');
 
-        $grid->toolbars(function (Grid\Toolbars $toolbars){
+        $grid->toolbars(function (Grid\Toolbars $toolbars) {
             $toolbars->addLeft(Grid\Tools\ToolButton::make("查看源代码")->handler("link")->uri("https://github.com/SmallRuralDog/laravel-vue-admin-demo/blob/master/app/Admin/Controllers/GoodsClassController.php"));
         });
 

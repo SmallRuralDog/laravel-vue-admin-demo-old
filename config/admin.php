@@ -14,7 +14,7 @@ return [
     'logo_light' => null,
     'logo_mini_light' => null,
     //版权
-    'copyright' => 'Copyright © 2020 SmallRuralDog V0.1.15',
+    'copyright' => 'Copyright © 2020 SmallRuralDog',
     //默认头像
     'default_avatar' => 'https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png',
     //登录页面背景
@@ -32,7 +32,8 @@ return [
     ],
     'bootstrap' => app_path('Admin/bootstrap.php'),
     'route' => [
-        'prefix' => env('ADMIN_ROUTE_PREFIX', ''),
+        'domain'=>null,
+        'prefix' => env('ADMIN_ROUTE_PREFIX', 'admin'),
         'api_prefix' => env('ADMIN_ROUTE_PREFIX', 'admin-api'),
         'namespace' => 'App\\Admin\\Controllers',
         'middleware' => ['web', 'admin'],
@@ -68,11 +69,14 @@ return [
     'upload' => [
         // Disk in `config/filesystem.php`.
         'disk' => 'public',
+        'uniqueName'=>false,
         // Image and file upload path under the disk above.
         'directory' => [
             'image' => 'images',
             'file' => 'files',
         ],
+        //文件上传类型
+        'mimes'=>'jpeg,bmp,png,gif,jpg',
     ],
     'database' => [
         // Database connection for following tables.
@@ -96,6 +100,7 @@ return [
         'role_permissions_table' => 'admin_role_permissions',
         'role_menu_table' => 'admin_role_menu',
     ],
+    //操作日志
     'operation_log' => [
         'enable' => true,
         /*
@@ -118,5 +123,6 @@ return [
     'show_version' => true,
     'show_environment' => true,
     'menu_bind_permission' => true,
+    'which-composer' => 'composer'
 
 ];

@@ -5,8 +5,9 @@ namespace App\Admin\Controllers;
 
 
 use App\Models\Brand;
-use SmallRuralDog\Admin\Components\Image;
-use SmallRuralDog\Admin\Components\Upload;
+
+use SmallRuralDog\Admin\Components\Form\Upload;
+use SmallRuralDog\Admin\Components\Grid\Image;
 use SmallRuralDog\Admin\Controllers\AdminController;
 use SmallRuralDog\Admin\Controllers\AdminResource;
 use SmallRuralDog\Admin\Form;
