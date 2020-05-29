@@ -51,7 +51,7 @@ class SuppliersController extends AdminController implements AdminResource
         $form->item('email')->inputWidth(4);
         $form->item('principal', "负责人")->inputWidth(4);
         $form->item('address', "地址")->required();
-        $form->item('remark', "备注")->inputWidth(8)->displayComponent(Input::make()->textarea());
+        $form->item('remark', "备注")->inputWidth(8)->component(Input::make()->textarea());
 
 
         return $form;
