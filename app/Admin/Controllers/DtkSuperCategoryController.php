@@ -17,7 +17,7 @@ use SmallRuralDog\Admin\Controllers\AdminResource;
 use SmallRuralDog\Admin\Form;
 use SmallRuralDog\Admin\Grid;
 
-class DtkSuperCategoryController extends AdminController implements AdminResource
+class DtkSuperCategoryController extends AdminController
 {
     use Dtk;
 
