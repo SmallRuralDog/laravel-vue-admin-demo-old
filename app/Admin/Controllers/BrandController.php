@@ -13,7 +13,7 @@ use SmallRuralDog\Admin\Controllers\AdminResource;
 use SmallRuralDog\Admin\Form;
 use SmallRuralDog\Admin\Grid;
 
-class BrandController extends AdminController implements AdminResource
+class BrandController extends AdminController
 {
 
     public function grid()
