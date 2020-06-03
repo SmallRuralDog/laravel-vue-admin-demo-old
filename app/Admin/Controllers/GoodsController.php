@@ -89,7 +89,7 @@ class GoodsController extends AdminController
                 return SelectOption::make($item->id, $item->name)->avatar(admin_file_url($item->icon))->desc(strtoupper($item->index_name));
             })->all();
         }));
-        $form->item("goods_class_path", "产品分类")->required()->displayComponent(function () {
+        $form->item("goods_class_path", "产品分类")->required()->component(function () {
             $goods_class = new GoodsClass();
             $allNodes = $goods_class->toTree();
             return Cascader::make()->options($allNodes)->value("id")->label("name")->expandTrigger("hover");

@@ -4,8 +4,9 @@ namespace Smallruraldog\LaravelVueAdminDemoExtend\Components;
 
 use App\Models\GoodsAttr;
 use SmallRuralDog\Admin\Components\Component;
-use SmallRuralDog\Admin\Components\Image;
-use SmallRuralDog\Admin\Components\Upload;
+use SmallRuralDog\Admin\Components\Form\Upload;
+use SmallRuralDog\Admin\Components\Grid\Image;
+
 
 class GoodsSku extends Component
 {
